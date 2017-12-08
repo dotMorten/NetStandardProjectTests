@@ -1,0 +1,7 @@
+<Project>
+  <PropertyGroup>
+    <PackageOutputPath>$(MSBuildThisFileDirectory)Output\NuGet\</PackageOutputPath> 
+    <OutputPath>$(MSBuildThisFileDirectory)Output\$(MSBuildProjectName)\$(Configuration)\</OutputPath>
+    <!--<BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)Output\intermediate\$(MSBuildProjectName)\</BaseIntermediateOutputPath>-->
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,81 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;monoandroid60;xamarinios10;uap10.0.16299</TargetFrameworks>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <RootNamespace>NetStandardTests.Forms</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Configurations>Debug;Release</Configurations>
+    <Platforms>AnyCPU</Platforms>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
+    <DefineConstants>$(DefineConstants);NETSTANDARD</DefineConstants>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(TargetFramework)' == 'uap10.0.16299'">
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.16299.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
+    <!--<DefineConstants>$(DefineConstants);NETFX_CORE</DefineConstants>-->
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'monoandroid60'">
+    <DefineConstants>$(DefineConstants);XAMARIN</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'xamarinios10'">
+    <DefineConstants>$(DefineConstants);XAMARIN</DefineConstants>
+  </PropertyGroup>
+  
+  <!-- </ItemGroup  Condition="'$(TargetFramework)' == 'net461'">
+    <ProjectReference Include="..\NetStandardTests.UI.WPF\NetStandardTests.UI.WPF.csproj">
+      <Project>{3541c7d1-900d-45fb-8861-80e2a64c554b}</Project>
+      <Name>NetStandardTests.UI.WPF</Name>
+    </ProjectReference>
+  </ItemGroup> -->
+  
+  <ItemGroup Condition="'$(TargetFramework)' == 'monoandroid60'">
+    <ProjectReference Include="..\NetStandardTests.UI.Android\NetStandardTests.UI.Android.csproj">
+      <Project>{527589c7-a1c4-4f8e-889a-2594f374318c}</Project>
+      <Name>NetStandardTests.UI.Android</Name>
+      <IncludeAssets>runtime</IncludeAssets>
+      <Private>false</Private>
+    </ProjectReference>
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework)' == 'xamarinios10'">
+    <ProjectReference Include="..\NetStandardTests.UI.iOS\NetStandardTests.UI.iOS.csproj">
+      <Project>{2bda7d43-d733-42fa-92a8-3b71b03615ac}</Project>
+      <Name>NetStandardTests.UI.iOS</Name>
+      <IncludeAssets>runtime</IncludeAssets>
+      <Private>false</Private>
+    </ProjectReference>
+    <Reference Include="OpenTK-1.0" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework)' == 'uap10.0.16299'">
+    <ProjectReference Include="..\NetStandardTests.UI.UWP\NetStandardTests.UI.UWP.csproj">
+      <Project>{1bd17974-567f-4ab2-8f57-a2e641c9b116}</Project>
+      <Name>NetStandardTests.UI.UWP</Name>
+      <Private>false</Private>
+      <IncludeAssets>runtime</IncludeAssets>
+    </ProjectReference>	
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.0.4" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\NetStandardTests\NetStandardTests.csproj">
+      <Project>{f5a8d2c7-aea7-4816-a8a3-961c6e4248b9}</Project>
+      <Name>NetStandardTests</Name>
+      <Private>false</Private>
+    </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MSBuild.Sdk.Extras" Version="1.1.0" PrivateAssets="all" />
+    <PackageReference Include="Xamarin.Forms" Version="2.5.0.121934 " />
+  </ItemGroup>
+
+    <Import Project="$(MSBuildSDKExtrasTargets)" Condition="Exists('$(MSBuildSDKExtrasTargets)')" />
+</Project>
