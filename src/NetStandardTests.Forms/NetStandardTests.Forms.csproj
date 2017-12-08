@@ -43,7 +43,7 @@
     <ProjectReference Include="..\NetStandardTests.UI.Android\NetStandardTests.UI.Android.csproj">
       <Project>{527589c7-a1c4-4f8e-889a-2594f374318c}</Project>
       <Name>NetStandardTests.UI.Android</Name>
-      <IncludeAssets>runtime</IncludeAssets>
+      <!--<IncludeAssets>runtime</IncludeAssets>-->
       <Private>false</Private>
     </ProjectReference>
   </ItemGroup>
@@ -52,7 +52,7 @@
     <ProjectReference Include="..\NetStandardTests.UI.iOS\NetStandardTests.UI.iOS.csproj">
       <Project>{2bda7d43-d733-42fa-92a8-3b71b03615ac}</Project>
       <Name>NetStandardTests.UI.iOS</Name>
-      <IncludeAssets>runtime</IncludeAssets>
+      <!--<IncludeAssets>runtime</IncludeAssets>-->
       <Private>false</Private>
     </ProjectReference>
     <Reference Include="OpenTK-1.0" />
@@ -63,7 +63,7 @@
       <Project>{1bd17974-567f-4ab2-8f57-a2e641c9b116}</Project>
       <Name>NetStandardTests.UI.UWP</Name>
       <Private>false</Private>
-      <IncludeAssets>runtime</IncludeAssets>
+      <!--<IncludeAssets>runtime</IncludeAssets>-->
     </ProjectReference>	
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.0.4" />
   </ItemGroup>

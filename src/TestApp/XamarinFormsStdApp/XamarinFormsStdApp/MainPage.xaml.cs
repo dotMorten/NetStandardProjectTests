@@ -13,7 +13,7 @@ namespace XamarinFormsStdApp
         {
             InitializeComponent();
             var c = new NetStandardTests.SharedClass();
-            c.Color = System.Drawing.Color.Blue;
+            c.Color = System.Drawing.Color.Yellow;
             testControl.MyProperty = c;
         }
     }

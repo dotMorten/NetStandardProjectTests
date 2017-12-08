@@ -20,6 +20,24 @@ namespace NetStandardTests.Forms
         {
         }
 #endif
+        protected override void OnElementChanged(ElementChangedEventArgs<MyControl> e)
+        {
+            base.OnElementChanged(e);
+
+            if (Control == null)
+            {
+                SetNativeControl(e.NewElement?.NativeControl);
+            }
+        }
+
+#if !NETFX_CORE
+        /// <summary>
+        /// Determines whether the native control is disposed of when this renderer is disposed
+        /// Can be overridden in deriving classes (default: true).
+        /// </summary>
+        protected override bool ManageNativeControlLifetime => false;
+#endif
+
     }
 #endif
 }

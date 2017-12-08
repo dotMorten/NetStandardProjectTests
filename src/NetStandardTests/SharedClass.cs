@@ -20,7 +20,7 @@ namespace NetStandardTests
             prefix = "iOS";
 #elif __ANDROID__
             prefix = "Android";
-#elif WINDOWS_APP
+#elif NETFX_CORE
             prefix = "UWP";
 #elif NETSTANDARD2_0
             prefix = ".NET Standard";
@@ -40,6 +40,9 @@ namespace NetStandardTests
         // Test that you can still expose platform specific members
         // These will only be available in projects that matches the target framework
 
+        /// <summary>
+        /// Platform property
+        /// </summary>
 #if NETFX
         public int NETFXProperty {get; set; } = 1;
 #elif NETFX_CORE
@@ -50,6 +53,9 @@ namespace NetStandardTests
         public int AndroidProperty {get; set; } = 8;
 #endif
 #if XAMARIN
+        /// <summary>
+        /// Xamarin property
+        /// </summary>
         public int XamarinProperty {get; set; } = 16;
 #endif
     }

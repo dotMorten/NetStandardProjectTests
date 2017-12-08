@@ -12,7 +12,7 @@ namespace NetStandardTests.Forms
     /// </summary>
     public class MyControl : View
 	{
-        private NetStandardTests.UI.MyControl nativeControl;
+        internal readonly NetStandardTests.UI.MyControl NativeControl;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MyControl"/> class.
@@ -57,7 +57,7 @@ namespace NetStandardTests.Forms
 
         internal MyControl(NetStandardTests.UI.MyControl nativeControl)
         {
-            this.nativeControl = nativeControl;
+            NativeControl = nativeControl;
         }
 
         /// <summary>
@@ -65,8 +65,8 @@ namespace NetStandardTests.Forms
         /// </summary>
         public SharedClass MyProperty
         {
-            get { return nativeControl.MyProperty; }
-            set { nativeControl.MyProperty = value; }
+            get { return NativeControl.MyProperty; }
+            set { NativeControl.MyProperty = value; }
         }
     }
 }
