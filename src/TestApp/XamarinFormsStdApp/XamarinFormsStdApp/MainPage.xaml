@@ -6,10 +6,9 @@
              x:Class="XamarinFormsStdApp.MainPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+            <test:MyControl x:Name="testControl" Margin="40" BackgroundColor="Blue"                             
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            <test:MyControl x:Name="testControl" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

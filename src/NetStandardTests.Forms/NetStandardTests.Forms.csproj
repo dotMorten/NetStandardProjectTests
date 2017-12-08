@@ -11,6 +11,7 @@
   <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
     <DefineConstants>$(DefineConstants);NETSTANDARD</DefineConstants>
+    <Product>NetStandardTests.UI.Forms - .NET Standard 2.0</Product>
   </PropertyGroup>
   
   <PropertyGroup Condition="'$(TargetFramework)' == 'uap10.0.16299'">
@@ -18,14 +19,17 @@
     <TargetPlatformVersion>10.0.16299.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
     <!--<DefineConstants>$(DefineConstants);NETFX_CORE</DefineConstants>-->
+    <Product>NetStandardTests.UI.Forms - UWP</Product>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(TargetFramework)' == 'monoandroid60'">
     <DefineConstants>$(DefineConstants);XAMARIN</DefineConstants>
+    <Product>NetStandardTests.UI.Forms - Android</Product>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(TargetFramework)' == 'xamarinios10'">
     <DefineConstants>$(DefineConstants);XAMARIN</DefineConstants>
+    <Product>NetStandardTests.UI.Forms - iOS</Product>
   </PropertyGroup>
   
   <!-- </ItemGroup  Condition="'$(TargetFramework)' == 'net461'">
