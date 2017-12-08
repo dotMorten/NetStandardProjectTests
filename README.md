@@ -29,3 +29,10 @@ All these things are accomplished using bait'n'switch, where the .NET Standard l
 #### Xamarin.Forms .NET Assembly
 `NetStandardTests.Forms`
      - Xamarin.Forms UI Control library, wrapping above native UI Controls as a cross-platform .NET Standard assembly
+
+
+### Acknowledgements
+None of this would be possible without [Oren Novotny's](https://twitter.com/onovotny) awesome blogposts and nuget packages. Useful articles:
+ - https://oren.codes/2017/01/04/multi-targeting-the-world-a-single-project-to-rule-them-all/
+ - https://oren.codes/2017/04/23/using-xamarin-forms-with-net-standard-vs-2017-edition/
+ 
