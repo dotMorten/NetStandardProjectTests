@@ -35,7 +35,7 @@ namespace NetStandardTests.UI
             set
             {
                 sharedClass = value;
-                text.Text = value?.ToString() ?? "";
+                text.Text = value?.Test() ?? "";
                 var color = value?.Color ?? System.Drawing.Color.Red;
                 text.TextColor = UIColor.FromRGBA(color.R, color.G, color.G, color.A);
                 InvalidateIntrinsicContentSize();
