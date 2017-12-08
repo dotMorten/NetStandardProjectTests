@@ -6,6 +6,7 @@
     <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateLibraryLayout>true</GenerateLibraryLayout>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <IncludeContentInPack>false</IncludeContentInPack>
     <Configurations>Debug;Release</Configurations>
     <Platforms>AnyCPU</Platforms>

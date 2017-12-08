@@ -7,6 +7,9 @@ using CoreGraphics;
 
 namespace NetStandardTests.UI
 {
+    /// <summary>
+    /// Custom platform control for iOS
+    /// </summary>
     [Foundation.Register("MyControl")]
     [System.ComponentModel.DisplayName("MyControl")]
     public class MyControl : UIView
@@ -14,12 +17,18 @@ namespace NetStandardTests.UI
         private SharedClass sharedClass;
         private UILabel text;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MyControl"/> class
+        /// </summary>
         public MyControl()
         {
             text = new UILabel();
             AddSubview(text);
         }
-        
+
+        /// <summary>
+        /// Gets or sets the test property
+        /// </summary>
         public SharedClass MyProperty
         {
             get { return sharedClass; }

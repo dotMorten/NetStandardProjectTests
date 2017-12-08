@@ -37,9 +37,12 @@ namespace NetStandardTests
         /// </summary>
         public System.Drawing.Color Color { get; set; }
 
+        // *******************************************************************************
         // Test that you can still expose platform specific members
         // These will only be available in projects that matches the target framework
+        // *******************************************************************************
 
+#if !NETSTANDARD2_0
         /// <summary>
         /// Platform property
         /// </summary>
@@ -57,6 +60,7 @@ namespace NetStandardTests
         /// Xamarin property
         /// </summary>
         public int XamarinProperty {get; set; } = 16;
+#endif
 #endif
     }
 }
