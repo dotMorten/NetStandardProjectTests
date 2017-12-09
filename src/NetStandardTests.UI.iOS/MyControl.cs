@@ -12,18 +12,36 @@ namespace NetStandardTests.UI
     /// </summary>
     [Foundation.Register("MyControl")]
     [System.ComponentModel.DisplayName("MyControl")]
-    public class MyControl : UIView
+    public class MyControl : UILabel
     {
         private SharedClass sharedClass;
-        private UILabel text;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MyControl"/> class
+        /// </summary>
+        /// <param name="p"></param>
+        public MyControl(IntPtr p) : base(p)
+        {
+            Initialize();
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MyControl"/> class
         /// </summary>
         public MyControl()
         {
-            text = new UILabel();
-            AddSubview(text);
+            Initialize();
+        }
+
+        /// <inheritdoc />
+        public override void AwakeFromNib()
+        {
+            // Called when loaded from xib or storyboard.
+            Initialize();
+        }
+
+        private void Initialize()
+        {
         }
 
         /// <summary>
@@ -35,10 +53,9 @@ namespace NetStandardTests.UI
             set
             {
                 sharedClass = value;
-                text.Text = value?.Test() ?? "";
+                Text = value?.Test() ?? "";
                 var color = value?.Color ?? System.Drawing.Color.Red;
-                text.TextColor = UIColor.FromRGBA(color.R, color.G, color.G, color.A);
-                InvalidateIntrinsicContentSize();
+                TextColor = UIColor.FromRGBA(color.R, color.G, color.G, color.A);
             }
         }
     }
